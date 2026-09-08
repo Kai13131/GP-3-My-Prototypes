@@ -7,7 +7,7 @@ public class Obstacle2 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,8 +20,13 @@ public class Obstacle2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(Player);
+            Die();
         }
     }
 
+
+    void Die()
+    {
+        Destroy(Player);
+    }
 }
